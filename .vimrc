@@ -1,9 +1,69 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NeoBundle Config
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+if has('vim_starting')
+  set nocompatible
+  set runtimepath+=~/.vim/bundle/neobundle.vim
+endif
+
+call neobundle#begin(expand('~/.vim/bundle'))
+
+" neobundle.vim自身をneobundle.vimで管理する
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" ヘルプの日本語化
+NeoBundle 'vim-jp/vimdoc-ja'
+
+" 現在開いているファイルをVim内で直接実行/結果表示
+NeoBundle 'thinca/vim-quickrun'
+
+" カラースキーム
+NeoBundle 'junegunn/seoul256.vim'
+
+" リポジトリファイル内検索
+NeoBundle 'kien/ctrlp.vim'
+
+call neobundle#end()
+
+filetype plugin indent on
+
+" プラグインがインストールされているかチェック
+NeoBundleCheck
+
+if !has('vim_starting')
+  " .vimrcを読み込み直した時のための設定
+  call neobundle#call_hook('on_source')
+endif
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" User Config
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" CtrlP 設定
+let g:ctrlp_use_migemo = 1
+let g:ctrlp_clear_cache_on_exit = 1   " 終了時キャッシュをクリア
+let g:ctrlp_mruf_max            = 500 " MRUの最大記録数
+let g:ctrlp_open_new_file       = 1   " 新規ファイル作成時にタブで開く
+
+" タグ
+set tags=./tags,tags,../tags
+
+
+"拡張子に応じて色を付ける
+syntax on
+
+" カラースキーム
+let g:seoul256_background = 233
+colo seoul256
+
 "エンコード
 set encoding=utf8
 "ファイルエンコード
 set fileencoding=utf-8
-"拡張子に応じて色を付ける
-syntax on
 "行数を表示
 set number
 "右下に表示される行・列の番号を表示する
@@ -47,7 +107,7 @@ set showcmd
 function! ZenkakuSpace()
   highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
 endfunction
- 
+
 if has('syntax')
   augroup ZenkakuSpace
     autocmd!
