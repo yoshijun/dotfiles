@@ -6,6 +6,7 @@
 	co = checkout
 	st = status
 	br = branch
+	so = remote show origin
 [user]
 	name = yoshijun
 	email = yoshijun@users.noreply.github.com
@@ -13,3 +14,7 @@
 	ui = auto
 [push]
 	default = simple
+[url "git@github.com:"]
+	insteadOf = git://github.com/
+	insteadOf = https://github.com/
+	insteadOf = http://github.com/
