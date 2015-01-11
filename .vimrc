@@ -44,13 +44,14 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " CtrlP 設定
-let g:ctrlp_use_migemo = 1
+let g:ctrlp_use_migemo          = 1
 let g:ctrlp_clear_cache_on_exit = 1   " 終了時キャッシュをクリア
 let g:ctrlp_mruf_max            = 500 " MRUの最大記録数
 let g:ctrlp_open_new_file       = 1   " 新規ファイル作成時にタブで開く
 
 " タグ
 set tags=./tags,tags,../tags
+noremap <C-[> <C-t>
 
 
 "拡張子に応じて色を付ける
