@@ -9,7 +9,6 @@ fi
 source $HOME/etc/git-completion.bash
 
 # User specific aliases and functions
-alias ls='ls --color=tty'
 alias l.='ls -d .*'
 alias ll='ls -l'
 alias la='ls -a'
@@ -19,8 +18,8 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 alias vi='vim'
-alias vim='TERM=xterm-color vim -p'
+alias vim='vim -p'
 alias view='vim -R'
 
 # プロンプト
-PS1="\[\e[1;34m\][\u@\h \W]\[\e[00m\]$ "
+PS1="\[\e[0;36m\][\u@\h \W]\[\e[00m\]$ "
