@@ -51,7 +51,7 @@ let g:ctrlp_open_new_file       = 1   " 新規ファイル作成時にタブで�
 
 " タグ
 set tags=./tags,tags,../tags
-noremap <C-[> <C-t>
+noremap <C-@> <C-t>
 
 
 "拡張子に応じて色を付ける
