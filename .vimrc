@@ -103,6 +103,9 @@ set matchtime=3
 set wrap
 "コマンドを画面最下部に表示する
 set showcmd
+"インデント
+set expandtab
+set shiftwidth=4
 
 "全角スペースのハイライトを設定
 function! ZenkakuSpace()
